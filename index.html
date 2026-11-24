@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KLAEDE — considered menswear and modern tailoring. Discover the new season, timeless essentials, and after-hours formalwear.">
+  <meta name="theme-color" content="#fbd8d8">
+  <title>KLAEDE — Modern Tailoring, Quietly Considered</title>
+
+  <link rel="icon" href="logo/klaede-logo.png" type="image/png">
+  <link rel="preload" href="banner%20asset/aa.png" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Icon library -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M3 6h18M3 12h18M3 18h18"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m5 5 14 14M19 5 5 19"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m16.5 16.5 4 4"/>
+    </symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24">
+      <path d="M5.5 8.5h13l1 12h-15l1-12Z"/>
+      <path d="M9 9V6.5a3 3 0 0 1 6 0V9"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.5"/>
+      <path d="M5 20c.6-4 3-6 7-6s6.4 2 7 6"/>
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path d="M20.8 5.8a5.4 5.4 0 0 0-7.6 0L12 7l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.6a5.4 5.4 0 0 0 0-7.6Z"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24">
+      <path d="M5 12h14"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+      <path d="M20 12H4m6-6-6 6 6 6"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M4 12h16m-6-6 6 6-6 6"/>
+    </symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 20V4m-6 6 6-6 6 6"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M17.5 6.6h.01"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="m12 2.5 2.9 5.9 6.6 1-4.8 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.8-4.6 6.6-1L12 2.5Z" fill="currentColor" stroke="none"/>
+    </symbol>
+  </svg>
+
+  <div class="page-shell" id="top">
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <button class="icon-button menu-toggle" type="button" data-menu-open aria-label="Open menu" aria-controls="menu-dialog">
+          <svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>
+        </button>
+
+        <a class="brand" href="#top" aria-label="KLAEDE home">
+          <img src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a class="nav-link is-current" href="#top">Home</a>
+          <a class="nav-link" href="#new-in">New In</a>
+          <a class="nav-link" href="#collections">Collections</a>
+          <a class="nav-link" href="#lookbook">Lookbook</a>
+          <a class="nav-link" href="#about">Our Story</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button" type="button" data-search-open aria-label="Search">
+            <svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg>
+          </button>
+          <button class="icon-button" type="button" data-account aria-label="Account">
+            <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
+          </button>
+          <button class="icon-button bag-button" type="button" data-cart-open aria-label="Open shopping bag">
+            <svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg>
+            <span class="bag-count" data-cart-count hidden>0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <h1 class="visually-hidden">KLAEDE — modern tailoring and considered menswear</h1>
+
+      <section class="hero" aria-label="KLAEDE campaign">
+        <div class="hero-slider" data-hero aria-roledescription="carousel">
+          <article class="hero-slide is-active" data-hero-slide aria-hidden="false" aria-label="1 of 4">
+            <picture>
+              <img
+                src="banner%20asset/aa.png"
+                alt="KLAEDE new season campaign in teal, featuring a model in a brown knit cardigan"
+                width="1920" height="1080" fetchpriority="high">
+            </picture>
+          </article>
+          <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="2 of 4">
+            <picture>
+              <img
+                src="banner%20asset/banner2.png"
+                alt="KLAEDE in soft pink — Modern Minimal You, a model in black"
+                width="1920" height="1080">
+            </picture>
+          </article>
+          <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="3 of 4">
+            <picture>
+              <img
+                src="banner%20asset/banner3.png"
+                alt="KLAEDE in plum — Comfort meets character, Step into confidence"
+                width="1920" height="1080">
+            </picture>
+          </article>
+          <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="4 of 4">
+            <picture>
+              <img
+                src="banner%20asset/desweb.png"
+                alt="KLAEDE in rose — a model in a blue ruffled blouse and tailored skirt beside the words Effortlessly Sweet, Elegantly You"
+                width="1920" height="1080">
+            </picture>
+          </article>
+
+          <div class="hero-dots" role="tablist" aria-label="Choose campaign">
+            <button class="hero-dot is-active" type="button" role="tab" aria-selected="true" aria-label="View campaign one" data-hero-dot="0"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign two" data-hero-dot="1"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign three" data-hero-dot="2"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign four" data-hero-dot="3"><span></span></button>
+          </div>
+
+          <div class="hero-arrows">
+            <button class="hero-arrow" type="button" aria-label="Previous campaign" data-hero-prev>
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+            </button>
+            <button class="hero-arrow" type="button" aria-label="Next campaign" data-hero-next>
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="edits" id="collections" aria-labelledby="collections-title">
+        <h2 class="visually-hidden" id="collections-title">Shop the collections</h2>
+
+        <div class="edits-grid">
+          <article class="edit-card edit-card--main">
+            <img loading="lazy" decoding="async"
+              class="edit-card__image"
+              src="New%20Folder/download%20(33).jpeg"
+              alt="Man wearing a cream shirt with brown tailored trousers"
+              width="736" height="1129">
+            <div class="edit-card__shade" aria-hidden="true"></div>
+            <div class="edit-card__content">
+              <span class="chip">For Him</span>
+              <h3 class="edit-card__title edit-card__title--display">The Signature<br>Edit</h3>
+              <p class="edit-card__copy">Quiet structure. Warm neutrals.<br>Made for the everyday.</p>
+              <a class="button button--maroon" href="#new-in">
+                Shop collection
+                <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </a>
+            </div>
+            <span class="edit-card__number" aria-hidden="true">01</span>
+          </article>
+
+          <article class="edit-card edit-card--formal">
+            <img loading="lazy" decoding="async"
+              class="edit-card__image"
+              src="New%20Folder/download%20(36).jpeg"
+              alt="Man in an all-black evening shirt and trousers"
+              width="736" height="1308">
+            <div class="edit-card__shade" aria-hidden="true"></div>
+            <div class="edit-card__content">
+              <span class="chip chip--light">For Him</span>
+              <h3 class="edit-card__title">The Evening Edit</h3>
+              <p class="edit-card__copy">After-dark tailoring,<br>without the formality.</p>
+              <a class="button button--light" href="#new-in">
+                Shop formal
+                <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="edit-card edit-card--accessories">
+            <img loading="lazy" decoding="async"
+              class="edit-card__image edit-card__image--detail"
+              src="New%20Folder/Classic%20Men%E2%80%99s%20Formal%20Outfit%20_%20White%20Shirt%20%26%20Black%20Tie%20Aesthetic.jpeg"
+              alt="Close-up detail of a white shirt and black silk tie"
+              width="736" height="1097">
+            <div class="edit-card__shade" aria-hidden="true"></div>
+            <div class="edit-card__content">
+              <span class="chip chip--light">The Details</span>
+              <h3 class="edit-card__title edit-card__title--small">Finishing<br>Touches</h3>
+              <p class="edit-card__copy">Ties, leather, and the pieces<br>that complete the look.</p>
+              <a class="button button--light" href="#new-in">
+                Shop accessories
+                <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="products" id="new-in" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Our Products</p>
+            <h2 id="products-title">Our Top Seller Products</h2>
+          </div>
+
+          <div class="carousel-meta">
+            <span class="carousel-status" aria-hidden="true"><span data-product-current>01</span><span class="carousel-status__divider">/</span>06</span>
+            <div class="carousel-buttons">
+              <button class="round-button" type="button" data-product-prev aria-label="Previous products" disabled>
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+              </button>
+              <button class="round-button" type="button" data-product-next aria-label="Next products">
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-viewport" data-product-carousel tabindex="0" role="region" aria-label="Top seller products carousel">
+          <div class="product-track">
+            <article class="product-card" data-product-id="signature-shirt">
+              <div class="product-media">
+                <span class="product-badge">Best Seller</span>
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/Classic%20Men%E2%80%99s%20Formal%20Outfit%20_%20White%20Shirt%20%26%20Black%20Tie%20Aesthetic.jpeg"
+                  alt="The Signature Poplin Shirt in white, styled with a black tie"
+                  width="736" height="1097">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Signature Poplin Shirt to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Shirts</p>
+                <div class="product-details">
+                  <h3 class="product-name">The Signature Poplin Shirt</h3>
+                  <span class="product-price" data-price="89">$89.00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="blue-oxford">
+              <div class="product-media">
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/download%20(32).jpeg"
+                  alt="The Soft Blue Oxford shirt paired with cream trousers"
+                  width="736" height="1103">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Soft Blue Oxford to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Shirts</p>
+                <div class="product-details">
+                  <h3 class="product-name">The Soft Blue Oxford</h3>
+                  <span class="product-price" data-price="95">$95.00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="wide-leg-trouser">
+              <div class="product-media">
+                <span class="product-badge">New In</span>
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/download%20(33).jpeg"
+                  alt="Pleated wide-leg trousers in a warm brown tone"
+                  width="736" height="1129">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add Pleated Wide-Leg Trouser to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Trousers</p>
+                <div class="product-details">
+                  <h3 class="product-name">Pleated Wide-Leg Trouser</h3>
+                  <span class="product-price" data-price="129">$129.00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="evening-shirt">
+              <div class="product-media">
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/download%20(36).jpeg"
+                  alt="The Evening Shirt in black with a tonal silk tie"
+                  width="736" height="1308">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Evening Shirt to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Evening</p>
+                <div class="product-details">
+                  <h3 class="product-name">The Evening Shirt</h3>
+                  <span class="product-price" data-price="110">$110.00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="sage-linen-shirt">
+              <div class="product-media">
+                <span class="product-badge">New In</span>
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/Elevate%20Your%20Style_%20Top%20Men_s%20Formal%20and%20Smart%20Casual%20Fashion%20Trends%202024.jpeg"
+                  alt="The Sage Linen Shirt styled with relaxed cream chinos"
+                  width="480" height="672">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Sage Linen Shirt to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Shirts</p>
+                <div class="product-details">
+                  <h3 class="product-name">The Sage Linen Shirt</h3>
+                  <span class="product-price" data-price="85">$85.00</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="textured-stripe-shirt">
+              <div class="product-media">
+                <img loading="lazy" decoding="async"
+                  src="New%20Folder/download%20(34).jpeg"
+                  alt="The Textured Stripe Shirt in blue and white, styled with dark trousers"
+                  width="736" height="1280">
+                <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Textured Stripe Shirt to wishlist" aria-pressed="false">
+                  <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
+                </button>
+                <button class="quick-add" type="button" data-add-to-bag>
+                  Quick add
+                  <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
+                </button>
+              </div>
+              <div class="product-info">
+                <p class="product-category">Shirts</p>
+                <div class="product-details">
+                  <h3 class="product-name">The Textured Stripe Shirt</h3>
+                  <span class="product-price" data-price="99">$99.00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="instagram" id="lookbook" aria-labelledby="instagram-title">
+        <div class="instagram-heading">
+          <div>
+            <p class="eyebrow">The Journal</p>
+            <h2 id="instagram-title">Follow us on Instagram</h2>
+          </div>
+          <a class="text-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            @klaede.official
+            <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+          </a>
+        </div>
+
+        <div class="instagram-grid">
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/download%20(31).jpeg" alt="Tailored grey shirt and black trousers" width="736" height="1104">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/download%20(35).jpeg" alt="Beige linen shirt with chocolate tailored trousers" width="736" height="1288">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/download%20(37).jpeg" alt="Blue shirt with a navy tailored suit and tie" width="735" height="1035">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/download%20(38).jpeg" alt="Light blue shirt and charcoal trousers" width="736" height="1104">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/Elevate%20Your%20Style_%20Top%20Men_s%20Formal%20and%20Smart%20Casual%20Fashion%20Trends%202024.jpeg" alt="Sage green linen shirt and cream chinos" width="480" height="672">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+          <a class="instagram-tile" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="View KLAEDE looks on Instagram">
+            <img loading="lazy" decoding="async" src="New%20Folder/download%20(34).jpeg" alt="Textured blue stripe shirt with dark trousers" width="736" height="1280">
+            <span class="instagram-tile__overlay" aria-hidden="true">
+              <svg class="icon"><use href="#icon-instagram"/></svg>
+              <span>@klaede.official</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="testimonials" aria-labelledby="testimonials-title">
+        <div class="testimonial-card">
+          <div class="testimonial-heading">
+            <div>
+              <p class="eyebrow">Client Diaries</p>
+              <h2 id="testimonials-title">What Our Client Say</h2>
+            </div>
+            <div class="testimonial-controls">
+              <button class="round-button round-button--cream" type="button" data-testimonial-prev aria-label="Previous testimonial">
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+              </button>
+              <button class="round-button round-button--cream" type="button" data-testimonial-next aria-label="Next testimonial">
+                <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="testimonial-slider" data-testimonial aria-live="polite">
+            <article class="testimonial-slide is-active" data-testimonial-slide>
+              <div class="testimonial-avatar">
+                <img loading="lazy" decoding="async" src="New%20Folder/download%20(38).jpeg" alt="Portrait of Adrian, a KLAEDE client" width="736" height="1104">
+              </div>
+              <div class="testimonial-body">
+                <p class="testimonial-mark" aria-hidden="true">&ldquo;</p>
+                <blockquote class="testimonial-quote">
+                  The quality is amazing and the delivery was super fast. The fit feels considered, the fabric feels special — I&rsquo;m so happy with my purchase.
+                </blockquote>
+                <p class="testimonial-author">Adrian &mdash; Chicago</p>
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide" data-testimonial-slide hidden>
+              <div class="testimonial-avatar">
+                <img loading="lazy" decoding="async" src="New%20Folder/download%20(37).jpeg" alt="Portrait of Marcus, a KLAEDE client" width="735" height="1035">
+              </div>
+              <div class="testimonial-body">
+                <p class="testimonial-mark" aria-hidden="true">&ldquo;</p>
+                <blockquote class="testimonial-quote">
+                  Every detail feels intentional. It&rsquo;s the rare kind of tailoring that works just as well in the boardroom as it does after hours.
+                </blockquote>
+                <p class="testimonial-author">Marcus &mdash; London</p>
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial-slide" data-testimonial-slide hidden>
+              <div class="testimonial-avatar">
+                <img loading="lazy" decoding="async" src="New%20Folder/download%20(31).jpeg" alt="Portrait of Elias, a KLAEDE client" width="736" height="1104">
+              </div>
+              <div class="testimonial-body">
+                <p class="testimonial-mark" aria-hidden="true">&ldquo;</p>
+                <blockquote class="testimonial-quote">
+                  Understated, beautifully made, and easy to wear. KLAEDE has quietly become the backbone of my wardrobe.
+                </blockquote>
+                <p class="testimonial-author">Elias &mdash; Copenhagen</p>
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                  <svg class="icon icon--star" aria-hidden="true"><use href="#icon-star"/></svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="testimonial-dots" role="tablist" aria-label="Choose testimonial">
+            <button class="testimonial-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Testimonial one" data-testimonial-dot="0"></button>
+            <button class="testimonial-dot" type="button" role="tab" aria-selected="false" aria-label="Testimonial two" data-testimonial-dot="1"></button>
+            <button class="testimonial-dot" type="button" role="tab" aria-selected="false" aria-label="Testimonial three" data-testimonial-dot="2"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="about-image">
+          <img loading="lazy" decoding="async"
+            src="New%20Folder/download%20(35).jpeg"
+            alt="A KLAEDE model wearing a relaxed beige shirt and chocolate tailoring"
+            width="736" height="1288">
+          <div class="about-image__caption">
+            <span>Since 2020</span>
+            <span>Made with intention</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow">Our Philosophy</p>
+          <h2 id="about-title">About Us</h2>
+          <p class="about-lead">
+            KLAEDE is a study in modern tailoring — pieces designed to move with you, from first light to after hours.
+          </p>
+          <p class="about-copy">
+            We make considered essentials in natural fabrics, cut for a lifetime of wear and finished with an ease that never asks for attention. Small batches, honest materials, and a slower approach to getting dressed.
+          </p>
+          <div class="about-notes" aria-label="Our commitments">
+            <span>Natural fabrics</span>
+            <span>Small batches</span>
+            <span>Designed to last</span>
+          </div>
+          <a class="button button--maroon" href="#collections">
+            Our Story
+            <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-inner">
+        <a class="footer-brand" href="#top" aria-label="KLAEDE home">
+          <img loading="lazy" decoding="async" src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+        </a>
+        <p class="footer-copy">&copy; 2026 KLAEDE. All rights reserved.</p>
+        <div class="footer-meta">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <span aria-hidden="true">/</span>
+          <a href="mailto:hello@klaede.com">hello@klaede.com</a>
+          <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile navigation -->
+  <dialog class="drawer menu-dialog" id="menu-dialog" aria-labelledby="menu-dialog-title">
+    <div class="drawer-head">
+      <a class="brand" href="#top" aria-label="KLAEDE home">
+        <img loading="lazy" decoding="async" src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+      </a>
+      <button class="icon-button" type="button" data-dialog-close aria-label="Close menu">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <p class="drawer-label" id="menu-dialog-title">Menu</p>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#top">Home <span>01</span></a>
+        <a href="#new-in">New In <span>02</span></a>
+        <a href="#collections">Collections <span>03</span></a>
+        <a href="#lookbook">Lookbook <span>04</span></a>
+        <a href="#about">Our Story <span>05</span></a>
+      </nav>
+      <div class="mobile-meta">
+        <p class="drawer-label">Client services</p>
+        <a href="mailto:hello@klaede.com">hello@klaede.com</a>
+        <a href="tel:+12125550148">+1 (212) 555-0148</a>
+      </div>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#new-in">Shipping &amp; returns</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Search -->
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+    <div class="search-inner">
+      <div class="search-head">
+        <p class="drawer-label">Find your piece</p>
+        <button class="icon-button" type="button" data-dialog-close aria-label="Close search">
+          <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+      <h2 class="visually-hidden" id="search-title">Search KLAEDE</h2>
+      <form class="search-form" role="search" data-search-form>
+        <svg class="icon search-form__icon" aria-hidden="true"><use href="#icon-search"/></svg>
+        <label class="visually-hidden" for="search-input">Search products</label>
+        <input id="search-input" name="q" type="search" placeholder="Search shirts, tailoring, the new season…" autocomplete="off" data-search-input>
+        <button class="button button--maroon" type="submit">Search</button>
+      </form>
+      <div class="search-popular" data-search-popular>
+        <span>Popular searches</span>
+        <button type="button" data-search-term="shirt">Shirts</button>
+        <button type="button" data-search-term="trouser">Trousers</button>
+        <button type="button" data-search-term="evening">Evening</button>
+        <button type="button" data-search-term="linen">Linen</button>
+      </div>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </div>
+  </dialog>
+
+  <!-- Shopping bag -->
+  <dialog class="drawer cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="drawer-head">
+      <h2 class="cart-title" id="cart-title">Your Bag <span data-cart-count-label>(0)</span></h2>
+      <button class="icon-button" type="button" data-dialog-close aria-label="Close shopping bag">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="cart-body" data-cart-items>
+      <div class="cart-empty">
+        <span class="cart-empty__mark" aria-hidden="true">K</span>
+        <h3>Your bag is empty</h3>
+        <p>Discover the pieces that belong in your everyday.</p>
+        <button class="button button--maroon" type="button" data-cart-shop>Explore new arrivals</button>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong data-cart-subtotal>$0.00</strong>
+      </div>
+      <p>Shipping and taxes calculated at checkout.</p>
+      <button class="button button--maroon button--full" type="button" data-checkout>Continue to checkout</button>
+    </div>
+  </dialog>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+</body>
+</html>
