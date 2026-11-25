@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KLAEDE — Shop">
+  <title>Shop — KLAEDE</title>
+  <link rel="icon" href="logo/klaede-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M3 6h18M3 12h18M3 18h18"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m5 5 14 14M19 5 5 19"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="m16.5 16.5 4 4"/>
+    </symbol>
+    <symbol id="icon-bag" viewBox="0 0 24 24">
+      <path d="M5.5 8.5h13l1 12h-15l1-12Z"/>
+      <path d="M9 9V6.5a3 3 0 0 1 6 0V9"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="3.5"/>
+      <path d="M5 20c.6-4 3-6 7-6s6.4 2 7 6"/>
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path d="M20.8 5.8a5.4 5.4 0 0 0-7.6 0L12 7l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.6a5.4 5.4 0 0 0 0-7.6Z"/>
+    </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"/>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24">
+      <path d="M5 12h14"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+      <path d="M20 12H4m6-6-6 6 6 6"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+      <path d="M4 12h16m-6-6 6 6-6 6"/>
+    </symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 20V4m-6 6 6-6 6 6"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M17.5 6.6h.01"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="m12 2.5 2.9 5.9 6.6 1-4.8 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.8-4.6 6.6-1L12 2.5Z" fill="currentColor" stroke="none"/>
+    </symbol>
+  </svg>
+
+  <div class="page-shell" id="top">
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <button class="icon-button menu-toggle" type="button" data-menu-open aria-label="Open menu" aria-controls="menu-dialog">
+          <svg class="icon" aria-hidden="true"><use href="#icon-menu"/></svg>
+        </button>
+
+        <a class="brand" href="index.html" aria-label="KLAEDE home">
+          <img src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+        </a>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link is-current" href="shop.html" aria-current="page">Shop</a>
+          <a class="nav-link" href="women.html">Women</a>
+          <a class="nav-link" href="men.html">Men</a>
+          <a class="nav-link" href="accessories.html">Accessories</a>
+          <a class="nav-link" href="about.html">About us</a>
+          <a class="nav-link" href="contact.html">Contact us</a>
+          <a class="nav-link" href="blog.html">Blog</a>
+        </nav>
+
+        <div class="header-actions">
+          <form class="header-search" role="search" data-shop-search-form>
+            <input id="shop-search" type="search" placeholder="Search products…" aria-label="Search products" autocomplete="off" data-shop-search>
+            <button class="icon-button" type="button" data-search-toggle aria-label="Search" aria-expanded="false">
+              <svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg>
+            </button>
+          </form>
+          <button class="icon-button" type="button" data-account aria-label="Account">
+            <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
+          </button>
+          <button class="icon-button bag-button" type="button" data-cart-open aria-label="Open shopping bag">
+            <svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg>
+            <span class="bag-count" data-cart-count hidden>0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-label="KLAEDE campaign">
+        <div class="hero-slider" data-hero aria-roledescription="carousel">
+          <div class="hero-track">
+            <article class="hero-slide is-active" data-hero-slide aria-hidden="false" aria-label="1 of 4">
+              <picture>
+                <img
+                  src="banner%20asset/aa.png"
+                  alt="KLAEDE new season campaign in teal, featuring a model in a brown knit cardigan"
+                  width="1920" height="1080" fetchpriority="high">
+              </picture>
+            </article>
+            <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="2 of 4">
+              <picture>
+                <img
+                  src="banner%20asset/banner2.png"
+                  alt="KLAEDE in soft pink — Modern Minimal You, a model in black"
+                  width="1920" height="1080">
+              </picture>
+            </article>
+            <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="3 of 4">
+              <picture>
+                <img
+                  src="banner%20asset/banner3.png"
+                  alt="KLAEDE in plum — Comfort meets character, Step into confidence"
+                  width="1920" height="1080">
+              </picture>
+            </article>
+            <article class="hero-slide" data-hero-slide aria-hidden="true" aria-label="4 of 4">
+              <picture>
+                <img
+                  src="banner%20asset/desweb.png"
+                  alt="KLAEDE in rose — a model in a blue ruffled blouse and tailored skirt beside the words Effortlessly Sweet, Elegantly You"
+                  width="1920" height="1080">
+              </picture>
+            </article>
+          </div>
+
+          <div class="hero-dots" role="tablist" aria-label="Choose campaign">
+            <button class="hero-dot is-active" type="button" role="tab" aria-selected="true" aria-label="View campaign one" data-hero-dot="0"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign two" data-hero-dot="1"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign three" data-hero-dot="2"><span></span></button>
+            <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="View campaign four" data-hero-dot="3"><span></span></button>
+          </div>
+
+          <div class="hero-arrows">
+            <button class="hero-arrow" type="button" aria-label="Previous campaign" data-hero-prev>
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"/></svg>
+            </button>
+            <button class="hero-arrow" type="button" aria-label="Next campaign" data-hero-next>
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      <div class="shop-body">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> &gt; <span>Shop</span></nav>
+        <h1 class="visually-hidden">Shop</h1>
+        <div class="shop-layout">
+      <aside class="filters" aria-label="Filters"><h2>Filters</h2>
+        <details class="f-group"><summary><span class="f-box"></span>Size</summary>
+          <div class="f-opts"><label><input type="checkbox" name="Size"> XS</label><label><input type="checkbox" name="Size"> S</label><label><input type="checkbox" name="Size"> M</label><label><input type="checkbox" name="Size"> L</label><label><input type="checkbox" name="Size"> XL</label></div></details>
+        <details class="f-group"><summary><span class="f-box"></span>Price Range</summary>
+          <div class="f-opts"><label><input type="radio" name="Price Range"> Under Rp. 100.000</label><label><input type="radio" name="Price Range"> Rp. 100.000 – 250.000</label><label><input type="radio" name="Price Range"> Over Rp. 250.000</label></div></details>
+        <details class="f-group"><summary><span class="f-box"></span>Categories</summary>
+          <div class="f-opts"><label><input type="checkbox" name="Categories"> Clothes</label><label><input type="checkbox" name="Categories"> Accessories</label></div></details>
+        <details class="f-group"><summary><span class="f-box"></span>Rating</summary>
+          <div class="f-opts"><label><input type="radio" name="Rating"> 5 stars</label><label><input type="radio" name="Rating"> 4 stars &amp; up</label><label><input type="radio" name="Rating"> 3 stars &amp; up</label></div></details>
+      </aside>
+        <div class="product-grid-wrap">
+        <p class="no-results" data-no-results hidden>No products match your search.</p>
+        <div class="product-grid">
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Satin Midi Skirt"><img loading="lazy" decoding="async" src="women/792070653242421922.jpg" alt="Satin Midi Skirt — The Cream Contrast" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Satin Midi Skirt</p><p class="p-sub">The Cream Contrast</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Pleated Skirt"><img loading="lazy" decoding="async" src="women/887138826592031920.jpg" alt="Pleated Skirt — The Butter Soft" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Pleated Skirt</p><p class="p-sub">The Butter Soft</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Camel Wrap Coat"><img loading="lazy" decoding="async" src="women/1116400195143810805.jpg" alt="Camel Wrap Coat — The Warm Layer" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Camel Wrap Coat</p><p class="p-sub">The Warm Layer</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Soft Neutral Set"><img loading="lazy" decoding="async" src="women/Eleg%C3%A2ncia%20Acess%C3%ADvel.jpg" alt="Soft Neutral Set — The Quiet Elegance" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Soft Neutral Set</p><p class="p-sub">The Quiet Elegance</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="White Formal Shirt"><img loading="lazy" decoding="async" src="New%20Folder/Classic%20Men%E2%80%99s%20Formal%20Outfit%20_%20White%20Shirt%20%26%20Black%20Tie%20Aesthetic.jpeg" alt="White Formal Shirt — Classic Office Crisp" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - White Formal Shirt</p><p class="p-sub">Classic Office Crisp</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Light Blue Formal Shirt"><img loading="lazy" decoding="async" src="New%20Folder/download%20(32).jpeg" alt="Light Blue Formal Shirt — Smart Office Blue" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Light Blue Formal Shirt</p><p class="p-sub">Smart Office Blue</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Black Formal Shirt"><img loading="lazy" decoding="async" src="New%20Folder/download%20(36).jpeg" alt="Black Formal Shirt — The Evening Edit" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Black Formal Shirt</p><p class="p-sub">The Evening Edit</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Sage Linen Shirt"><img loading="lazy" decoding="async" src="New%20Folder/Elevate%20Your%20Style_%20Top%20Men_s%20Formal%20and%20Smart%20Casual%20Fashion%20Trends%202024.jpeg" alt="Sage Linen Shirt — The Relaxed Weekend" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">CLOTHES - Sage Linen Shirt</p><p class="p-sub">The Relaxed Weekend</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Structured Handbag"><img loading="lazy" decoding="async" src="accessoris/download%20%289%29.jpg" alt="Structured Handbag — The Cream Classic" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">ACCESSORIES - Structured Handbag</p><p class="p-sub">The Cream Classic</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Silk Scarf"><img loading="lazy" decoding="async" src="accessoris/Transforme%20Seu%20Look%20com%20Apenas%20um%20Len%C3%A7.jpg" alt="Silk Scarf — The Styled Knot" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">ACCESSORIES - Silk Scarf</p><p class="p-sub">The Styled Knot</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Silk Scarf"><img loading="lazy" decoding="async" src="accessoris/download%20%288%29.jpg" alt="Silk Scarf — The Soft Blue" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">ACCESSORIES - Silk Scarf</p><p class="p-sub">The Soft Blue</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+          <article class="p-card">
+            <a class="p-img" href="#" aria-label="Silk Scarf"><img loading="lazy" decoding="async" src="accessoris/download%20%287%29.jpg" alt="Silk Scarf — The Printed Silk" width="600" height="750"></a>
+            <div class="p-info"><p class="p-name">ACCESSORIES - Silk Scarf</p><p class="p-sub">The Printed Silk</p></div>
+            <button class="p-price" type="button">Rp. 95.000,00</button>
+          </article>
+        </div>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-inner">
+        <a class="footer-brand" href="#top" aria-label="KLAEDE home">
+          <img loading="lazy" decoding="async" src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+        </a>
+        <p class="footer-copy">&copy; 2026 KLAEDE. All rights reserved.</p>
+        <div class="footer-meta">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <span aria-hidden="true">/</span>
+          <a href="mailto:hello@klaede.com">hello@klaede.com</a>
+          <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile navigation -->
+  <dialog class="drawer menu-dialog" id="menu-dialog" aria-labelledby="menu-dialog-title">
+    <div class="drawer-head">
+      <a class="brand" href="index.html" aria-label="KLAEDE home">
+        <img loading="lazy" decoding="async" src="logo/klaede-logo.png" alt="KLAEDE" width="926" height="227">
+      </a>
+      <button class="icon-button" type="button" data-dialog-close aria-label="Close menu">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <p class="drawer-label" id="menu-dialog-title">Menu</p>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html">Home <span>01</span></a>
+        <a href="shop.html">Shop <span>02</span></a>
+        <a href="women.html">Women <span>03</span></a>
+        <a href="men.html">Men <span>04</span></a>
+        <a href="accessories.html">Accessories <span>05</span></a>
+        <a href="about.html">About us <span>06</span></a>
+        <a href="contact.html">Contact us <span>07</span></a>
+        <a href="blog.html">Blog <span>08</span></a>
+      </nav>
+      <div class="mobile-meta">
+        <p class="drawer-label">Client services</p>
+        <a href="mailto:hello@klaede.com">hello@klaede.com</a>
+        <a href="tel:+12125550148">+1 (212) 555-0148</a>
+      </div>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#new-in">Shipping &amp; returns</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Search -->
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+    <div class="search-inner">
+      <div class="search-head">
+        <p class="drawer-label">Find your piece</p>
+        <button class="icon-button" type="button" data-dialog-close aria-label="Close search">
+          <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+      <h2 class="visually-hidden" id="search-title">Search KLAEDE</h2>
+      <form class="search-form" role="search" data-search-form>
+        <svg class="icon search-form__icon" aria-hidden="true"><use href="#icon-search"/></svg>
+        <label class="visually-hidden" for="search-input">Search products</label>
+        <input id="search-input" name="q" type="search" placeholder="Search shirts, tailoring, the new season…" autocomplete="off" data-search-input>
+        <button class="button button--maroon" type="submit">Search</button>
+      </form>
+      <div class="search-popular" data-search-popular>
+        <span>Popular searches</span>
+        <button type="button" data-search-term="shirt">Shirts</button>
+        <button type="button" data-search-term="trouser">Trousers</button>
+        <button type="button" data-search-term="evening">Evening</button>
+        <button type="button" data-search-term="linen">Linen</button>
+      </div>
+      <div class="search-results" data-search-results aria-live="polite"></div>
+    </div>
+  </dialog>
+
+  <!-- Shopping bag -->
+  <dialog class="drawer cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+    <div class="drawer-head">
+      <h2 class="cart-title" id="cart-title">Your Bag <span data-cart-count-label>(0)</span></h2>
+      <button class="icon-button" type="button" data-dialog-close aria-label="Close shopping bag">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <div class="cart-body" data-cart-items>
+      <div class="cart-empty">
+        <span class="cart-empty__mark" aria-hidden="true">K</span>
+        <h3>Your bag is empty</h3>
+        <p>Discover the pieces that belong in your everyday.</p>
+        <button class="button button--maroon" type="button" data-cart-shop>Explore new arrivals</button>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong data-cart-subtotal>$0.00</strong>
+      </div>
+      <p>Shipping and taxes calculated at checkout.</p>
+      <button class="button button--maroon button--full" type="button" data-checkout>Continue to checkout</button>
+    </div>
+  </dialog>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -159,7 +159,10 @@
     let autoplayTimer;
     let touchStartX = null;
 
-    const showSlide = (index, restart = true) => {
+    const track = qs(".hero-track", hero);
+    const mobileQuery = window.matchMedia("(max-width: 900px)");
+
+    const showSlide = (index, restart = true, scrollTrack = true) => {
       activeIndex = (index + slides.length) % slides.length;
 
       slides.forEach((slide, slideIndex) => {
@@ -173,6 +176,11 @@
         dot.classList.toggle("is-active", isActive);
         dot.setAttribute("aria-selected", String(isActive));
       });
+
+      if (scrollTrack && track && mobileQuery.matches) {
+        const slide = slides[activeIndex];
+        track.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+      }
 
       if (restart) restartAutoplay();
     };
@@ -214,12 +222,33 @@
     hero.addEventListener(
       "touchend",
       (event) => {
+        if (mobileQuery.matches) { touchStartX = null; return; }
         if (touchStartX === null) return;
         const delta = event.changedTouches[0].clientX - touchStartX;
         touchStartX = null;
 
         if (Math.abs(delta) < 45) return;
         showSlide(activeIndex + (delta < 0 ? 1 : -1));
+      },
+      { passive: true }
+    );
+
+    let swipeTimer;
+    track?.addEventListener(
+      "scroll",
+      () => {
+        if (!mobileQuery.matches) return;
+        window.clearTimeout(swipeTimer);
+        swipeTimer = window.setTimeout(() => {
+          const center = track.scrollLeft + track.clientWidth / 2;
+          let best = 0;
+          let bestDistance = Infinity;
+          slides.forEach((slide, i) => {
+            const distance = Math.abs(slide.offsetLeft + slide.clientWidth / 2 - center);
+            if (distance < bestDistance) { bestDistance = distance; best = i; }
+          });
+          if (best !== activeIndex) showSlide(best, true, false);
+        }, 90);
       },
       { passive: true }
     );
@@ -628,5 +657,116 @@
 
   qs("[data-back-to-top]")?.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: scrollBehavior() });
+  });
+})();
+
+/* ==========================================================
+   Smooth wheel scrolling
+   ========================================================== */
+(function () {
+  if (window.matchMedia("(pointer: coarse)").matches) return;
+
+  var root = document.documentElement;
+  var EASE = 0.085; // smaller = smoother/slower (0.05 - 0.2)
+  var target = window.scrollY, current = target, raf = null;
+
+  root.classList.add("has-smooth");
+
+  function maxScroll() { return root.scrollHeight - window.innerHeight; }
+  function clamp(v) { return Math.max(0, Math.min(maxScroll(), v)); }
+
+  function loop() {
+    // Scroll changed by something else (scrollbar drag, keyboard, script): follow it.
+    if (Math.abs(window.scrollY - current) > 2) {
+      target = current = window.scrollY;
+      raf = null;
+      return;
+    }
+    current += (target - current) * EASE;
+    if (Math.abs(target - current) < 0.4) current = target;
+    window.scrollTo(0, current);
+    raf = current === target ? null : requestAnimationFrame(loop);
+  }
+
+  function start() {
+    if (!raf) {
+      current = window.scrollY;
+      raf = requestAnimationFrame(loop);
+    }
+  }
+
+  window.addEventListener("wheel", function (e) {
+    if (e.ctrlKey || e.defaultPrevented) return;
+    if (document.querySelector("dialog[open]")) return;
+
+    // Leave inner scrollable areas (textarea, lists) alone.
+    for (var el = e.target; el && el !== document.body && el !== root; el = el.parentElement) {
+      if (el.nodeType !== 1) continue;
+      var oy = getComputedStyle(el).overflowY;
+      if ((oy === "auto" || oy === "scroll") && el.scrollHeight > el.clientHeight) return;
+    }
+
+    e.preventDefault();
+    var dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaMode === 2 ? e.deltaY * window.innerHeight : e.deltaY;
+    if (!raf) target = current = window.scrollY;
+    target = clamp(target + dy);
+    start();
+  }, { passive: false });
+
+  // In-page links (#section) glide too.
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented) return;
+    var id = a.getAttribute("href").slice(1);
+    var el = id && document.getElementById(decodeURIComponent(id));
+    if (!el) return;
+    e.preventDefault();
+    var header = document.querySelector(".site-header");
+    if (!raf) target = current = window.scrollY;
+    target = clamp(el.getBoundingClientRect().top + window.scrollY - (header ? header.offsetHeight : 0));
+    start();
+    history.replaceState(null, "", "#" + id);
+  });
+})();
+
+/* ==========================================================
+   Header search (Shop, Women, Men, Accessories)
+   ========================================================== */
+(function () {
+  var form = document.querySelector("[data-shop-search-form]");
+  var input = document.querySelector("[data-shop-search]");
+  if (!form || !input) return;
+  var toggle = form.querySelector("[data-search-toggle]");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".p-card"));
+  var empty = document.querySelector("[data-no-results]");
+
+  function filter() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (card) {
+      var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+      card.hidden = !match;
+      if (match) shown++;
+    });
+    if (empty) empty.hidden = shown !== 0;
+  }
+
+  function setOpen(open) {
+    form.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    if (open) input.focus();
+    else { input.value = ""; filter(); }
+  }
+
+  toggle.addEventListener("click", function () {
+    setOpen(!form.classList.contains("is-open"));
+  });
+  input.addEventListener("input", filter);
+  form.addEventListener("submit", function (e) { e.preventDefault(); filter(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && form.classList.contains("is-open")) setOpen(false);
+  });
+  document.addEventListener("click", function (e) {
+    if (form.classList.contains("is-open") && !input.value && !form.contains(e.target)) setOpen(false);
   });
 })();
