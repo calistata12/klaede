@@ -92,9 +92,8 @@
           <button class="icon-button" type="button" data-account aria-label="Account">
             <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
           </button>
-          <button class="icon-button bag-button" type="button" data-cart-open aria-label="Open shopping bag">
+          <button class="icon-button bag-button" type="button" aria-label="Shopping bag">
             <svg class="icon" aria-hidden="true"><use href="#icon-bag"/></svg>
-            <span class="bag-count" data-cart-count hidden>0</span>
           </button>
         </div>
       </div>
@@ -251,7 +250,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Signature Poplin Shirt to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -274,7 +273,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Soft Blue Oxford to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -298,7 +297,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add Pleated Wide-Leg Trouser to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -321,7 +320,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Evening Shirt to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -345,7 +344,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Sage Linen Shirt to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -368,7 +367,7 @@
                 <button class="wishlist-button" type="button" data-wishlist aria-label="Add The Textured Stripe Shirt to wishlist" aria-pressed="false">
                   <svg class="icon icon--heart" aria-hidden="true"><use href="#icon-heart"/></svg>
                 </button>
-                <button class="quick-add" type="button" data-add-to-bag>
+                <button class="quick-add" type="button">
                   Quick add
                   <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-plus"/></svg>
                 </button>
@@ -640,32 +639,6 @@
         <button type="button" data-search-term="linen">Linen</button>
       </div>
       <div class="search-results" data-search-results aria-live="polite"></div>
-    </div>
-  </dialog>
-
-  <!-- Shopping bag -->
-  <dialog class="drawer cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
-    <div class="drawer-head">
-      <h2 class="cart-title" id="cart-title">Your Bag <span data-cart-count-label>(0)</span></h2>
-      <button class="icon-button" type="button" data-dialog-close aria-label="Close shopping bag">
-        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
-      </button>
-    </div>
-    <div class="cart-body" data-cart-items>
-      <div class="cart-empty">
-        <span class="cart-empty__mark" aria-hidden="true">K</span>
-        <h3>Your bag is empty</h3>
-        <p>Discover the pieces that belong in your everyday.</p>
-        <button class="button button--maroon" type="button" data-cart-shop>Explore new arrivals</button>
-      </div>
-    </div>
-    <div class="cart-footer">
-      <div class="cart-subtotal">
-        <span>Subtotal</span>
-        <strong data-cart-subtotal>$0.00</strong>
-      </div>
-      <p>Shipping and taxes calculated at checkout.</p>
-      <button class="button button--maroon button--full" type="button" data-checkout>Continue to checkout</button>
     </div>
   </dialog>
 
